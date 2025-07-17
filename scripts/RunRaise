@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# RunRaise - Run or raise application script
+# Dependencies: hyprctl, jq
+
+set -euo pipefail
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <application>"
+    exit 1
+fi
+
+APP="$1"
+
+# Check if application is already running
+if hyprctl clients -j | jq -e ".[] | select(.class | ascii_downcase | contains(\"${APP,,}\"))" >/dev/null 2>&1; then
+    # Application is running, focus it
+    ADDRESS=$(hyprctl clients -j | jq -r ".[] | select(.class | ascii_downcase | contains(\"${APP,,}\")) | .address" | head -1)
+    hyprctl dispatch focuswindow address:"$ADDRESS"
+else
+    # Application is not running, start it
+    exec "$APP" &
+fi 

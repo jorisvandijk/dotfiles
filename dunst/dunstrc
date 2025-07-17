@@ -1,0 +1,20 @@
+[global]
+font = CaskaydiaCove Nerd Font 12
+frame_color = "#ff79c6"  # Dracula pink
+separator_color = frame
+highlight = "#ff79c6"    # Dracula pink
+corner_radius = 8
+frame_width = 2 
+
+[urgency_low]
+background = "#1e1e2eE6"  # 90% opacity
+foreground = "#f8f8f2"    # Dracula white
+
+[urgency_normal]
+background = "#1e1e2eE6"  # 90% opacity
+foreground = "#f8f8f2"    # Dracula white
+
+[urgency_critical]
+background = "#1e1e2eE6"  # 90% opacity
+foreground = "#f8f8f2"    # Dracula white
+frame_color = "#ff5555"   # Dracula red for critical notifications

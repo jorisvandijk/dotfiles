@@ -1,0 +1,42 @@
+#!/usr/bin/env bash
+
+#   Volume 2.1
+#   Manages volume levels and displays notifications
+#   Dependencies: pulsemixer, pamixer, dunst
+#   Usage: ./Volume <u|d|m> [increment_percentage]
+#
+#   By Joris van Dijk | Joris.codes
+#   Licensed under the MIT license
+
+inc=$2
+
+if [[ -z "$inc" ]]; then
+	inc=5
+fi
+
+volume () {
+	vol="$(pamixer --get-volume)"
+	
+	if [[ $(pamixer --get-mute) == "true" ]] ; then
+		icon=""	
+	else
+		icon=""
+	fi
+
+	echo $icon $vol
+}
+
+setvolume() {
+	if [[ $1 == "m" ]] || [[ $1 == "mute" ]]; then
+		pactl set-sink-mute @DEFAULT_SINK@ toggle 	
+	elif [[ $1 == "u" ]] || [[ $1 == "up" ]]; then
+		pactl set-sink-mute @DEFAULT_SINK@ false
+		pactl set-sink-volume @DEFAULT_SINK@ +$inc%
+	elif [[ $1 == "d" ]] || [[ $1 == "down" ]]; then
+		pactl set-sink-volume @DEFAULT_SINK@ -$inc%
+	fi
+}
+
+dunstctl close-all
+setvolume $1
+notify-send -u normal -t 5000 "$(volume)"

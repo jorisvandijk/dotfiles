@@ -1,0 +1,29 @@
+#!/usr/bin/env bash
+#  WindowSwitcher 1.7
+#  Clean display, internal address
+#  Dependencies: wofi, hyprctl, jq
+
+# Build menu entries and map them to addresses
+mapfile -t entries < <(
+  hyprctl clients -j | jq -r '
+    .[] |
+    select(.address and .class and .title) |
+    {
+      addr: .address,
+      label: (
+        (.class | ascii_downcase | "\(.[0:1] | ascii_upcase)\(.[1:])") + " " +
+        (if (.title | length) > 80 then .title[:67] + "..." else .title end)
+      )
+    } | "\(.label)|\(.addr)"
+  '
+)
+
+# Show menu (only labels)
+selection=$(printf '%s\n' "${entries[@]}" | cut -d'|' -f1 | wofi --dmenu -i -p "Windows")
+
+# Match selected label back to address
+if [ -n "$selection" ]; then
+  address=$(printf '%s\n' "${entries[@]}" | grep -F "$selection" | cut -d'|' -f2)
+  [ -n "$address" ] && hyprctl dispatch focuswindow address:"$address"
+fi
+

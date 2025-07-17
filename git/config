@@ -1,0 +1,6 @@
+[user]
+	name = joris
+	email = joris@jorisvandijk.com
+
+[init]
+	defaultBranch = main

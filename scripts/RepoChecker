@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+
+#   RepoChecker 1.2
+#   Check and manage Git repositories in a specified directory
+#   Dependencies: fzf, git
+#   Usage: Just run the script.
+#
+#   By Joris van Dijk | Joris.codes
+#   Licensed under the MIT license
+
+# Set the folder containing your repositories
+REPO_DIR="${1:-$HOME/git}" 
+
+# List of repository names to omit (comma-separated, no spaces)
+OMIT_REPOS="dotfiles-hyprland"
+
+# Convert the omit list into an array
+IFS=',' read -r -a OMIT_REPOS_ARRAY <<< "$OMIT_REPOS"
+
+# Ensure fzf is installed
+if ! command -v fzf &>/dev/null; then
+    echo "fzf is not installed. Please install it and try again."
+    exit 1
+fi
+
+# Check if the directory exists
+if [[ ! -d "$REPO_DIR" ]]; then
+    echo "Directory $REPO_DIR does not exist."
+    exit 1
+fi
+
+# Find all Git repositories and check their status
+repos_with_status=()
+while IFS= read -r repo; do
+    repo_dir=$(dirname "$repo")
+    repo_name=$(basename "$repo_dir")
+
+    # Skip omitted repositories
+    if [[ " ${OMIT_REPOS_ARRAY[*]} " =~ " $repo_name " ]]; then
+        continue
+    fi
+
+    cd "$repo_dir" || continue
+
+    # Check for changes
+    if [[ -n $(git status --porcelain) ]]; then
+        repos_with_status+=("* $repo_dir") # Mark repositories with changes
+    else
+        repos_with_status+=("  $repo_dir") # Unmarked for clean repos
+    fi
+done < <(find "$REPO_DIR" -type d -name .git -prune)
+
+if [[ ${#repos_with_status[@]} -eq 0 ]]; then
+    echo "No Git repositories found in $REPO_DIR."
+    exit 1
+fi
+
+# Use fzf to select a repository
+selected_repo=$(printf "%s\n" "${repos_with_status[@]}" | fzf --prompt="Select a repository: ")
+
+if [[ -z "$selected_repo" ]]; then
+    echo "No repository selected."
+    exit 0
+fi
+
+# Remove the marker and extract the repository path
+selected_repo=$(echo "$selected_repo" | sed 's/^[* ]*//')
+
+# Change to the selected repository
+cd "$selected_repo" || { echo "Failed to cd into $selected_repo"; exit 1; }
+
+# Show Git status
+echo "Git status for $selected_repo:"
+git status
+
+# Ask user if they want to add, commit, and push changes
+read -p "Would you like to add, commit, and push changes? [y/N]: " confirm
+if [[ "$confirm" =~ ^[Yy]$ ]]; then
+    # Add changes
+    git add -A
+    echo "All changes added."
+
+    # Commit changes
+    read -p "Enter commit message: " commit_msg
+    if [[ -z "$commit_msg" ]]; then
+        echo "Commit message cannot be empty. Aborting."
+        exit 1
+    fi
+    git commit -m "$commit_msg"
+    echo "Changes committed."
+
+    # Push changes
+    git push
+    echo "Changes pushed."
+else
+    echo "Operation canceled."
+fi

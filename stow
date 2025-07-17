@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+# Function to determine destination path for a file
+get_destination() {
+    local dirname="$1"
+    local rel_path="$2"
+    
+    if [[ "$dirname" == "home" ]]; then
+        echo "$HOME/$rel_path"
+    elif [[ "$dirname" == "scripts" ]]; then
+        echo "$HOME/.local/bin/$rel_path"
+    elif [[ "$dirname" == "firefox" ]]; then
+        echo "$HOME/.mozilla/firefox/$rel_path"
+    else
+        echo "$HOME/.config/$dirname/$rel_path"
+    fi
+}
+
+# Function to process all files in directories
+process_files() {
+    local action="$1"  # "check" or "link"
+    local conflicts=0
+    local link_count=0
+    
+    for dir in "$SCRIPT_DIR"/*/; do
+        [[ -d "$dir" ]] || continue
+        dirname="$(basename "$dir")"
+        
+        while IFS= read -r -d '' file; do
+            rel_path="${file#$dir}"
+            dest="$(get_destination "$dirname" "$rel_path")"
+            
+            if [[ "$action" == "check" ]]; then
+                if [[ -e "$dest" && ! -L "$dest" ]]; then
+                    echo "Error: $dest already exists and is not a symlink"
+                    conflicts=$((conflicts + 1))
+                fi
+            elif [[ "$action" == "link" ]]; then
+                # Create parent directory if needed
+                mkdir -p "$(dirname "$dest")"
+                
+                # Create symlink
+                ln -sf "$file" "$dest"
+                echo "Linked: $file -> $dest"
+                link_count=$((link_count + 1))
+            fi
+        done < <(find "$dir" -type f -print0)
+    done
+    
+    if [[ "$action" == "check" ]]; then
+        return $conflicts
+    elif [[ "$action" == "link" ]]; then
+        echo "Done! Created $link_count symlinks."
+    fi
+}
+
+echo "Checking for conflicts..."
+if ! process_files "check"; then
+    conflicts=$?
+    echo "Found $conflicts conflict(s). Aborting."
+    exit 1
+fi
+
+echo "Creating symlinks..."
+process_files "link"

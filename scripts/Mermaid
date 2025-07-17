@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+#	Mermaid 1.0
+#	Converts Mermaid code to png images
+#	Dependencies: mermaid-cli
+#   Usage: Just run the script.
+#
+#	Adapted from original script by Joris van Dijk | Joris.codes 
+#	Licensed under the MIT license
+
+for f in *.mermaid; do
+  mmdc -i "$f" -o "${f%.mmd}.png"
+done

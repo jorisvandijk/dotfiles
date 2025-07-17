@@ -1,0 +1,253 @@
+#!/usr/bin/env bash
+# NixNext - NixOS System Update Script (No Home Manager)
+# Updated to work without Home Manager
+
+set -euo pipefail
+
+# Configuration
+readonly DOTFILES_PATH="/home/joris/home/dotfiles"
+readonly CLEANUP_DAYS=10
+readonly USER="joris"
+
+# Colors
+readonly RED='\033[0;31m'
+readonly GREEN='\033[0;32m'
+readonly YELLOW='\033[1;33m'
+readonly BLUE='\033[0;34m'
+readonly NC='\033[0m' # No Color
+
+# Arrays to track progress
+COMPLETED_STEPS=()
+
+# Logging functions
+log() {
+    echo -e "${BLUE}[INFO]${NC} $1"
+}
+
+success() {
+    echo -e "${GREEN}[SUCCESS]${NC} $1"
+    COMPLETED_STEPS+=("$1")
+}
+
+warning() {
+    echo -e "${YELLOW}[WARNING]${NC} $1"
+}
+
+error() {
+    echo -e "${RED}[ERROR]${NC} $1" >&2
+    exit 1
+}
+
+section_header() {
+    echo
+    echo -e "${BLUE}====== $1 ======${NC}"
+    echo
+}
+
+run_as_user() {
+    sudo -u "$USER" bash -c "$1"
+}
+
+emergency_cleanup() {
+    warning "Emergency cleanup triggered"
+    log "Script interrupted - system may be in inconsistent state"
+    exit 130
+}
+
+# Check functions
+check_prerequisites() {
+    log "Checking prerequisites..."
+    
+    [[ $EUID -eq 0 ]] || error "This script must be run as root (use sudo)"
+    [[ -d "$DOTFILES_PATH" ]] || error "Dotfiles directory not found: $DOTFILES_PATH"
+    command -v nix >/dev/null || error "Nix is not installed"
+    command -v nixos-rebuild >/dev/null || error "nixos-rebuild not found"
+    
+    success "Prerequisites checked"
+}
+
+check_system_state() {
+    log "Checking system state..."
+    
+    if systemctl list-units --failed --quiet | grep -q .; then
+        warning "Some systemd units are in failed state:"
+        systemctl list-units --failed --no-pager
+        echo
+    fi
+    
+    success "System state checked"
+}
+
+add_git_changes() {
+    log "Adding git changes..."
+    
+    cd "$DOTFILES_PATH"
+    git add -A && {
+        success "Git changes added"
+        return 0
+    }
+    
+    warning "Failed to add git changes"
+}
+
+update_flake() {
+    log "Updating flake inputs..."
+    
+    cd "$DOTFILES_PATH"
+    nix flake update && {
+        success "Flake inputs updated"
+        return 0
+    }
+    
+    error "Failed to update flake inputs"
+}
+
+validate_flake() {
+    log "Validating flake configuration..."
+    
+    cd "$DOTFILES_PATH"
+    nix flake check --no-build && {
+        success "Flake configuration validated"
+        return 0
+    }
+    
+    error "Flake validation failed"
+}
+
+get_current_system_generation() {
+    nix-env --list-generations --profile /nix/var/nix/profiles/system | tail -1 | awk '{print $1}' || echo "unknown"
+}
+
+handle_rebuild_timeout() {
+    local exit_code=$1
+    
+    [[ $exit_code -eq 124 ]] && error "System rebuild timed out (30 minutes). This may indicate a serious issue."
+    
+    warning "System rebuild failed. You can rollback with: sudo nixos-rebuild switch --rollback"
+    error "System rebuild failed"
+}
+
+rebuild_system() {
+    log "Rebuilding NixOS system..."
+    
+    local current_gen
+    current_gen=$(get_current_system_generation)
+    log "Current system generation: $current_gen"
+    
+    timeout 1800 nixos-rebuild switch --flake "$DOTFILES_PATH/" || handle_rebuild_timeout $?
+    
+    success "System rebuild completed"
+}
+
+# Hyprland functions
+hyprctl_available() {
+    run_as_user "command -v hyprctl >/dev/null 2>&1"
+}
+
+reload_hyprland() {
+    log "Reloading Hyprland configuration..."
+    
+    hyprctl_available || {
+        warning "hyprctl not found, skipping Hyprland reload"
+        return 0
+    }
+    
+    run_as_user "hyprctl reload" && {
+        success "Hyprland configuration reloaded"
+        return 0
+    }
+    
+    warning "Failed to reload Hyprland configuration"
+}
+
+# Cleanup functions
+cleanup_system_generations() {
+    nix-collect-garbage --delete-older-than "${CLEANUP_DAYS}d" && {
+        success "System generations cleaned up"
+        return 0
+    }
+    
+    warning "Failed to clean up system generations"
+}
+
+cleanup_user_generations() {
+    run_as_user "nix-collect-garbage --delete-older-than ${CLEANUP_DAYS}d" && {
+        success "User generations cleaned up"
+        return 0
+    }
+    
+    warning "Failed to clean up user generations"
+}
+
+cleanup_generations() {
+    log "Cleaning up old generations (older than $CLEANUP_DAYS days)..."
+    cleanup_system_generations
+    cleanup_user_generations
+}
+
+show_system_generations() {
+    echo "System generations:"
+    nix-env --list-generations --profile /nix/var/nix/profiles/system 2>/dev/null | tail -5 || {
+        warning "Could not list system generations"
+    }
+}
+
+show_current_generations() {
+    section_header "Current Generations"
+    
+    show_system_generations
+    echo
+}
+
+show_summary() {
+    section_header "Update Summary"
+    
+    for step in "${COMPLETED_STEPS[@]}"; do
+        echo -e "${GREEN}✓${NC} $step"
+    done
+    
+    log "Update process completed successfully!"
+}
+
+handle_git_commit() {
+    log "Committing changes..."
+    
+    cd "$DOTFILES_PATH"
+    if git diff --cached --quiet; then
+        log "No changes to commit"
+        return 0
+    fi
+    
+    git commit -m "System update $(date '+%Y-%m-%d %H:%M:%S')" && {
+        success "Changes committed"
+        return 0
+    }
+    
+    warning "Failed to commit changes"
+}
+
+# Main execution
+main() {
+    log "Starting NixOS update process (no Home Manager)..."
+    
+    check_prerequisites
+    check_system_state
+    add_git_changes
+    update_flake
+    validate_flake
+    rebuild_system
+    reload_hyprland
+    handle_git_commit
+    cleanup_generations
+    
+    show_current_generations
+    show_summary
+    
+    echo
+    log "Script finished successfully!"
+}
+
+# Trap Ctrl+C and other signals for graceful cleanup
+trap 'echo; emergency_cleanup' INT TERM ERR
+
+main "$@"

@@ -1,0 +1,25 @@
+{
+  "version": 6,
+  "engines": [
+    {
+      "name": "DuckDuckGo",
+      "isAppProvided": false,
+      "isDefault": true,
+      "uris": [
+        {
+          "template": "https://duckduckgo.com/?q={searchTerms}",
+          "type": "text/html",
+          "method": "GET"
+        }
+      ]
+    }
+  ],
+  "metaData": {
+    "current": "DuckDuckGo",
+    "hash": "placeholder",
+    "searchDefault": "DuckDuckGo",
+    "searchOrder": [
+      "DuckDuckGo"
+    ]
+  }
+}

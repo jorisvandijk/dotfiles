@@ -1,0 +1,85 @@
+[[ $- != *i* ]] && return
+
+eval "$(starship init bash)"
+eval "$(fzf --bash)"
+
+alias ..='cd ..'
+alias b='pacman -Qq > .packages'
+alias c='clear'
+alias cat='bat'
+alias clean='sudo pacman -Qtdq | sudo pacman -Rdns -'
+alias d='Dotfiles'
+alias dip='DockerIP'
+alias ga='git add -A'
+alias gc='git commit -m' 
+alias gp='git push'
+alias gs='git status'
+alias grep='grep --color=auto'
+alias h='SearchHistory'
+alias kali='docker exec -it kali-linux /bin/bash'
+alias la='exa -lab --header --color=always --group-directories-first --long --git'
+alias ls='exa -lb --header --color=always --group-directories-first --long --git'
+alias m='micro'
+#alias mp3='yt-dlp --extract-audio --audio-format mp3 '
+alias nopwn='cd ~/git/docker && docker-compose down'
+alias o='cd && micro $(fzf -m --preview="bat --color=always {}")'
+alias p='pulsemixer'
+alias pwn='cd ~/git/docker && docker-compose up -d && DockerIP'
+alias push='Push'
+alias server='ssh root@192.168.1.34'
+alias u='yay -Syyu --noconfirm'
+alias w='curl wttr.in'
+alias website='bundle exec jekyll serve'
+alias x='chmod +x'
+alias xprop='hyprctl clients'
+
+bind 'set completion-ignore-case on'
+bind 'set show-all-if-ambiguous on'
+bind 'TAB:menu-complete'
+
+PS1='[\u@\h \W]\$ '
+
+# export PATH=$HOME/.local/bin::$PATH
+export PATH="$HOME/.local/share/gem/ruby/3.3.0/bin:$HOME/.local/bin:$PATH"
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+export MICRO_TRUECOLOR=1
+export NIXOS_OZONE_WL=1
+export ELECTRON_OZONE_PLATFORM_HINT=auto
+
+function ex () {
+   if [ -f $1 ] ; then
+       case $1 in
+           *.tar.bz2)   tar xvjf $1    ;;
+           *.tar.gz)    tar xvzf $1    ;;
+           *.bz2)       bunzip2 $1     ;;
+           *.rar)       unrar x $1     ;;
+           *.gz)        gunzip $1      ;;
+           *.tar)       tar xvf $1     ;;
+           *.tbz2)      tar xvjf $1    ;;
+           *.tgz)       tar xvzf $1    ;;
+           *.zip)       unzip $1       ;;
+           *.7z)        7z x $1        ;;
+           *.xz)        tar xvzf $1    ;;
+           *)           echo "don't know how to extract '$1'..." ;;
+       esac
+   else
+       echo "'$1' is not a valid file!"
+   fi
+}
+
+function i() {
+    selected_packages=$(yay -Slq | fzf --multi --preview "yay -Si {1}" --preview-window=right:70% | tr '\n' ' ')
+    [[ -n "$selected_packages" ]] && yay -S $selected_packages
+}
+
+function r() {
+    selected_packages=$(pacman -Qq | fzf --multi --preview "pacman -Qi {1}" --preview-window=right:70% | tr '\n' ' ')
+    [[ -n "$selected_packages" ]] && sudo pacman -Rns $selected_packages
+}
+
+shopt -s autocd
+shopt -s cdspell
+shopt -s checkwinsize
+shopt -s histappend
+
+eval "$(zoxide init --cmd cd bash)"

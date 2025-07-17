@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# Nix Garbage Collection Script
+# Removes old generations and performs garbage collection
+
+set -e  # Exit on any error
+
+echo "Starting Nix garbage collection..."
+
+# Delete old generations, keeping only the last 3
+echo "Deleting old generations (keeping last 3)..."
+nix-env --delete-generations +3
+
+# If using NixOS, also clean system generations
+if command -v nixos-rebuild &> /dev/null; then
+    echo "Cleaning NixOS system generations..."
+    sudo nix-env --profile /nix/var/nix/profiles/system --delete-generations +3
+    
+    # Remove old boot entries
+    echo "Cleaning boot menu entries..."
+    sudo /run/current-system/bin/switch-to-configuration boot
+fi
+
+# Run garbage collection
+echo "Running garbage collection..."
+nix-collect-garbage
+
+# Optimize the Nix store 
+echo "Optimizing Nix store..."
+nix-store --optimize
+
+echo "Garbage collection complete!"
+
+# Show remaining generations
+echo "Remaining generations:"
+nix-env --list-generations

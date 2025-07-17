@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+#   SearchHistory 1.0
+#   Interactive shell history search
+#   Dependencies: fzf
+#   Usage: Just run the script
+#
+#   By Joris van Dijk | Joris.codes
+#   Licensed under the MIT license
+
+# Load the shell history explicitly
+history_file="${HISTFILE:-$HOME/.bash_history}"
+if [ ! -f "$history_file" ]; then
+    echo "No history file found."
+    exit 1
+fi
+
+# Extract history, remove duplicates, sort newest to oldest
+tac "$history_file" |  # Reverse the file to show the newest entries first
+awk '!seen[$0]++' |  # Deduplicate commands
+fzf |  # Use fzf without a preview
+xargs -r -I {} bash -c "{}"
