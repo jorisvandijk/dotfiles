@@ -2,6 +2,8 @@
 
 This repository contains my personal dotfiles — configuration files used to customize and manage the behavior of various programs and tools across my systems.
 
+These files go along with my Nix setup.
+
 ## License
 
 Unless otherwise noted, all files in this repository are dedicated to the *public domain*.
