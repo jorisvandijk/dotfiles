@@ -66,6 +66,18 @@ hs() {
     rm ~/git/website/.hugo_build.lock 2>/dev/null
 }
 
+hn() {
+    if [ -z "$1" ]; then
+        echo "Error: Post name required" >&2
+        echo "Usage: hn <post-name>" >&2
+        return 1
+    fi
+    
+    cd /home/joris/git/website
+    hugo new "posts/${1}.md"
+    micro content/posts/"${1}.md"
+}
+
 shopt -s autocd
 shopt -s cdspell
 shopt -s checkwinsize
