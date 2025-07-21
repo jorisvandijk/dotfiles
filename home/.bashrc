@@ -52,8 +52,8 @@ function ex () {
            *.tgz)       tar xvzf $1    ;;
            *.zip)       unzip $1       ;;
            *.7z)        7z x $1        ;;
-           *.xz)        tar xvzf $1    ;;
-           *)           echo "don't know how to extract '$1'..." ;;
+           *.xz)        tar xvJf $1    ;;
+           *)           echo "I don't know how to extract '$1'..." ;;
        esac
    else
        echo "'$1' is not a valid file!"

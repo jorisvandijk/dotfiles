@@ -8,14 +8,14 @@ get_destination() {
     local dirname="$1"
     local rel_path="$2"
     
-    if [[ "$dirname" == "home" ]]; then
+    if [[ "$dirname" == "home" ]]; then # in ~/
         echo "$HOME/$rel_path"
-    elif [[ "$dirname" == "scripts" ]]; then
+    elif [[ "$dirname" == "scripts" ]]; then 
         echo "$HOME/.local/bin/$rel_path"
-    elif [[ "$dirname" == "firefox" ]]; then
+    elif [[ "$dirname" == "firefox" ]]; then # .mozilla
         echo "$HOME/.mozilla/firefox/$rel_path"
-    else
-        echo "$HOME/.config/$dirname/$rel_path"
+    else # all others in .config
+        echo "$HOME/.config/$dirname/$rel_path" 
     fi
 }
 
