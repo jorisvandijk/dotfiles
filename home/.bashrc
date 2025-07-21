@@ -60,6 +60,12 @@ function ex () {
    fi
 }
 
+hs() {
+    cd ~/git/website
+    hugo server -D
+    rm ~/git/website/.hugo_build.lock 2>/dev/null
+}
+
 shopt -s autocd
 shopt -s cdspell
 shopt -s checkwinsize
