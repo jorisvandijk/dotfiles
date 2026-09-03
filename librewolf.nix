@@ -33,7 +33,10 @@
                 "www.youtube.com###masthead #button"
                 ""
                 "! === Kill video suggestions pane ==="
-                "youtube.com##ytd-watch-next-secondary-results-renderer"
+                "www.youtube.com##ytd-watch-next-secondary-results-renderer"
+                ""
+                "! === Kill startpage ad nag ==="
+                "www.startpage.com##.css-13k8eon"
                 ""
               ];
             };

@@ -53,7 +53,7 @@
       "s" = "jFindApp";
       "server" = ''ssh -t root@192.168.1.5 "tmux attach || tmux new -s main"'';
       "space" = ''du -sh "''${1:-.}"'';
-      "u" = "sudo darwin-rebuild switch --flake /Users/joris/Git/nix/#macbook && brew update && brew upgrade";
+      "u" = "sudo darwin-rebuild switch --flake /Users/joris/Git/dotfiles/#macbook && brew update && brew upgrade";
       "w" = "curl wttr.in";
       "x" = "chmod +x";
     };

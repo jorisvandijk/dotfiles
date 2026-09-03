@@ -1,5 +1,7 @@
 { ... }:
 {
+  environment.variables.HOMEBREW_NO_INTERACTIVE = "1";
+
   nix-homebrew = {
     enable = true;
     user = "joris";
