@@ -7,7 +7,34 @@
   system.primaryUser = "joris";
   users.users.joris.home = "/Users/joris";
 
-  networking.hostName = "macbook";
+  system.activationScripts.postActivation.text = ''
+    cat > /etc/hosts <<'HOSTS'
+127.0.0.1   localhost
+255.255.255.255 broadcasthost
+::1             localhost
+
+10.10.10.110 home.vdijk.be
+10.10.10.110 frigate.vdijk.be
+10.10.10.110 tidarr.vdijk.be
+10.10.10.110 sabnzbd.vdijk.be
+10.10.10.110 radarr.vdijk.be
+10.10.10.110 sonarr.vdijk.be
+10.10.10.110 bazarr.vdijk.be
+10.10.10.110 jellyfin.vdijk.be
+10.10.10.110 npm.vdijk.be
+10.10.10.110 qbittorrent.vdijk.be
+10.10.10.110 lidarr.vdijk.be
+10.10.10.110 prowlarr.vdijk.be
+10.10.10.110 pihole.vdijk.be
+10.10.10.110 pbs.vdijk.be
+10.10.10.110 seerr.vdijk.be
+10.10.10.110 immich.vdijk.be
+10.10.10.110 romm.vdijk.be
+10.10.10.110 navidrome.vdijk.be
+10.10.10.110 wireguard.vdijk.be
+10.10.10.110 proxmox.vdijk.be
+HOSTS
+  '';
 
   nix.settings.experimental-features = "nix-command flakes";
 
