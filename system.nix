@@ -36,6 +36,7 @@
 10.10.10.110 navidrome.vdijk.be
 10.10.10.110 wireguard.vdijk.be
 10.10.10.110 proxmox.vdijk.be
+10.10.10.110 docker.vdijk.be
 HOSTS
   '';
 
