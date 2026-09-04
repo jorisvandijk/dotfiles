@@ -35,6 +35,9 @@
                 "! === Kill video suggestions pane ==="
                 "www.youtube.com##ytd-watch-next-secondary-results-renderer"
                 ""
+                "! === Kill slowdown toast ==="
+                "www.youtube.com##.paper-toast-open.yt-notification-action-renderer.style-scope.toast-button"
+                ""
                 "! === Kill startpage ad nag ==="
                 "www.startpage.com##.css-13k8eon"
                 ""
@@ -67,10 +70,6 @@
         force = true;
         settings = [
           {
-            name = "Homelab";
-            url = "https://jorisvandijk.github.io/startpage/";
-          }
-          {
             name = "jorisvandijk.com";
             url = "https://jorisvandijk.com";
           }
@@ -94,6 +93,7 @@
         "extensions.autoDisableScopes" = 0;
         "accessibility.typeaheadfind.flashBar" = 0;
         "browser.backspace_action" = 0;
+        "browser.tabs.closeWindowWithLastTab" = false;
         "browser.toolbars.bookmarks.visibility" = "never";
         "browser.translations.neverTranslateLanguages" = "nl";
         "browser.urlbar.shortcuts.actions" = false;
@@ -107,6 +107,7 @@
         "sidebar.revamp" = true;
         "sidebar.verticalTabs" = true;
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+        "media.videocontrols.picture-in-picture.enabled" = false;
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {

@@ -8,6 +8,9 @@
   users.users.joris.home = "/Users/joris";
 
   system.activationScripts.postActivation.text = ''
+    # Disable "Slightly dim the display on battery" and auto-brightness
+    pmset -b lessbright 0
+    pmset -c lessbright 0
     cat > /etc/hosts <<'HOSTS'
 127.0.0.1   localhost
 255.255.255.255 broadcasthost
@@ -140,6 +143,10 @@ HOSTS
 
       "com.apple.assistant.support" = {
         "Assistant Enabled" = false;
+      };
+
+      "com.apple.BezelServices" = {
+        dAuto = false;
       };
 
       "com.apple.gamed" = {
