@@ -4,6 +4,21 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Disable Command-M",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "from": {
+                                    "key_code": "m",
+                                    "modifiers": {
+                                        "mandatory": ["command"]
+                                    }
+                                },
+                                "to": [{ "key_code": "vk_none" }]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Hyper+Space → Command+Space (Raycast)",
                         "manipulators": [
                             {

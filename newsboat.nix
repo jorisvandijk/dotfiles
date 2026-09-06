@@ -47,6 +47,7 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCui75uSJxO5LxKjGELBSV5g"; title = "Emmy"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCPD_bxCRGpmmeQcbe2kpPaA"; title = "First We Feast"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC226u9zaUA5HT-TSiWHmiaQ"; title = "GanshirtArt"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC08v9RkBLemtA4Y68LO9vUw"; title = "HaggisonToast"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCLqQ5m7AXj_oyUvLZPsts0Q"; title = "Hands On Katie"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCFQ4mhb74S_BRVY19fAPciw"; title = "Historic Alley"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCZXvtZFMfY9Urftv6m22_5Q"; title = "Imperium Romanum"; }
@@ -71,6 +72,7 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCmxePybUpZj8RRuWz6r8uTQ"; title = "Politievlogger Jan-Willem"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCAL3JXZSzSm8AlZyD3nQdBA"; title = "Primitive Technology"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCAbAsEZ-0LccTNbl8r-3EaQ"; title = "Scott Yu-Jan"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC6107grRI4m0o2-emgoDnAA"; title = "Smarter Every Day"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCQD-0MjUbDBwm2UTVYr0Dag"; title = "Suibhne"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2SMpy2oZV6BoyJEYShw9bw"; title = "TA Outdoors"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCgRaK4A7yi4ZELCLUjdP_pg"; title = "Techdweeb"; }

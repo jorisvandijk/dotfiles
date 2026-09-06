@@ -37,6 +37,8 @@
 10.10.10.110 wireguard.vdijk.be
 10.10.10.110 proxmox.vdijk.be
 10.10.10.110 docker.vdijk.be
+10.10.10.119 storage.vdijk.be
+10.10.10.110 start.vdijk.be
 HOSTS
   '';
 

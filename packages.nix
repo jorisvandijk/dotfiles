@@ -72,7 +72,6 @@
       "karabiner-elements"
       "lulu"
       "macfuse"
-      "mark-text"
       "oversight"
       "pearcleaner"
       "privadovpn"
