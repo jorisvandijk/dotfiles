@@ -4,6 +4,29 @@
             "complex_modifications": {
                 "rules": [
                     {
+                        "description": "Enter opens selected items in Finder (Cmd+O)",
+                        "manipulators": [
+                            {
+                                "type": "basic",
+                                "conditions": [
+                                    {
+                                        "type": "frontmost_application_if",
+                                        "bundle_identifiers": ["^com\\.apple\\.finder$"]
+                                    }
+                                ],
+                                "from": {
+                                    "key_code": "return_or_enter"
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "o",
+                                        "modifiers": ["left_command"]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
                         "description": "Disable Command-M",
                         "manipulators": [
                             {
