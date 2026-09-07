@@ -11,12 +11,17 @@
     # Disable "Slightly dim the display on battery" and auto-brightness
     pmset -b lessbright 0
     pmset -c lessbright 0
+
+    # Set mpv as default player for video formats (run as user to avoid auth dialogs)
+    for uti in public.mpeg-4 com.apple.quicktime-movie public.avi org.matroska.mkv public.3gpp public.mpeg com.microsoft.windows-media-wmv; do
+      sudo -u joris /run/current-system/sw/bin/duti -s io.mpv "$uti" all
+    done
     cat > /etc/hosts <<'HOSTS'
 127.0.0.1   localhost
 255.255.255.255 broadcasthost
 ::1             localhost
 
-10.10.10.110 home.vdijk.be
+10.10.10.110 ha.vdijk.be
 10.10.10.110 frigate.vdijk.be
 10.10.10.110 tidarr.vdijk.be
 10.10.10.110 sabnzbd.vdijk.be
@@ -38,7 +43,7 @@
 10.10.10.110 proxmox.vdijk.be
 10.10.10.110 docker.vdijk.be
 10.10.10.119 storage.vdijk.be
-10.10.10.110 start.vdijk.be
+10.10.10.110 home.vdijk.be
 HOSTS
   '';
 

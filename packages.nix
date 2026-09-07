@@ -8,6 +8,7 @@
     bash
     bat
     claude-code
+    duti
     exiftool
     eza
     fd
