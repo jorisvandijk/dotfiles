@@ -68,12 +68,7 @@
       ];
       bookmarks = {
         force = true;
-        settings = [
-          {
-            name = "jorisvandijk.com";
-            url = "https://jorisvandijk.com";
-          }
-        ];
+        settings = import ./bookmarks.nix;
       };
       search = {
         default = "Startpage";
