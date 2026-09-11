@@ -2,6 +2,17 @@
 {
   nixpkgs.config.allowUnfree = true;
 
+  # Apps managed in their own nix files (see home.nix imports):
+  #   git           → git.nix
+  #   kitty         → kitty.nix
+  #   librewolf     → librewolf.nix
+  #   micro         → micro.nix
+  #   newsboat      → newsboat.nix
+  #   yazi          → yazi.nix
+  #   zed-editor    → zed.nix
+  #   zsh, fzf, zoxide → shell.nix
+  #   hammerspoon, karabiner-elements → homebrew casks, config in hammerspoon.nix / karabiner.nix
+
   environment.systemPackages = (with pkgs; [
     _7zz
     android-tools
@@ -37,7 +48,6 @@
     watch
     wget
     yt-dlp
-    zed-editor
   ]) ++ (with pkgs."nerd-fonts"; [
     caskaydia-cove
     symbols-only

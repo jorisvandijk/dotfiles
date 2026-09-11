@@ -4,12 +4,13 @@
     ./git.nix
     ./kitty.nix
     ./librewolf.nix
-./micro.nix
+    ./micro.nix
     ./yazi.nix
     ./newsboat.nix
     ./hammerspoon.nix
     ./karabiner.nix
     ./shell.nix
+    ./zed.nix
   ];
 
   targets.darwin.copyApps.enable = true;
