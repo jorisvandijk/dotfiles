@@ -63,6 +63,7 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCJ24N4O0bP7LGLBDvye7oCA"; title = "Matt D'Avella"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCto5zpvpnE6LrbfbHtgPMdA"; title = "Musclebones"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCMrMVIBtqFW6O0-MWq26gqw"; title = "my mechanics"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCbHjx1o7A8eeGqQjPbfsWGA"; title = "Mujin Makes"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCvrLvII5oxSWEMEkszrxXEA"; title = "N-O-D-E"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCJT5qwrkkSp_bSs5NEwcDiA"; title = "Nate Martsolf"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCq8ZAAsI89IoJ-fn1gYpO3g"; title = "Nighshift"; }
