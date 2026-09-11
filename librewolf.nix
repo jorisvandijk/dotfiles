@@ -104,6 +104,7 @@
         "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
         "media.videocontrols.picture-in-picture.enabled" = false;
         "media.videocontrols.picture-in-picture.video-toggle.enabled" = false;
+        "dom.webserial.enabled" = true;
         "browser.uiCustomization.state" = builtins.toJSON {
           placements = {
             "nav-bar" = [
