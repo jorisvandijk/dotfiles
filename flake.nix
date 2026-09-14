@@ -19,6 +19,7 @@
         ./system.nix
         ./packages.nix
         ./homebrew.nix
+        ./menubar.nix
         ./undesirables.nix
         nix-homebrew.darwinModules.nix-homebrew
         home-manager.darwinModules.home-manager
