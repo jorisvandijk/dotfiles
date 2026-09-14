@@ -1,5 +1,5 @@
 [
-  { name = "jorisvandijk.com";          url = "https://jorisvandijk.com"; }
+  { name = "Jorisvandijk.com";          url = "https://jorisvandijk.com"; }
   { name = "Homelab startpage";         url = "https://home.vdijk.be"; }
   { name = "Home Assistant";            url = "https://ha.vdijk.be"; }
   { name = "Frigate";                   url = "https://frigate.vdijk.be"; }

@@ -7,6 +7,7 @@
       "html"
       "markdown-snippets"
       "mermaid"
+      "dracula"
     ];
     userSettings = {
       agent_servers = {

@@ -163,6 +163,11 @@ HOSTS
       "com.apple.gamed" = {
         GKOptedOutOfGameCenter = true;
       };
+
+      "com.apple.desktopservices" = {
+        DSDontWriteNetworkStores = true;
+        DSDontWriteUSBStores = true;
+      };
     };
   };
 }
