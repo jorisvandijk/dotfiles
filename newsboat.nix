@@ -44,7 +44,6 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCdC0An4ZPNr_YiFiYoVbwaw"; title = "Daily Dose Of Internet"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCje6-Yak9u1msy5l7sE9pBA"; title = "Deconstructed"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUQo7nzH1sXVpzL92VesANw"; title = "DIY Perks"; }
-      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCui75uSJxO5LxKjGELBSV5g"; title = "Emmy"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCPD_bxCRGpmmeQcbe2kpPaA"; title = "First We Feast"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC226u9zaUA5HT-TSiWHmiaQ"; title = "GanshirtArt"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC08v9RkBLemtA4Y68LO9vUw"; title = "HaggisonToast"; }
