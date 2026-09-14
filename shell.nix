@@ -112,6 +112,10 @@
         cmd=$( ( fc -l -n 1 -1 || fc -l -n ) | fzf --tac --no-sort)
         [ -n "$cmd" ] && print -z "$cmd"
       }
+
+      try() {
+        nix run "nixpkgs#$1";
+      }
     '';
   };
 
