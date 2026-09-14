@@ -77,6 +77,8 @@
       setopt hist_save_no_dups
       setopt hist_verify
 
+      source "$HOME/git/scripts/j.zsh"
+
       git_status_prompt() {
         local st
         st=$(git --no-optional-locks status --porcelain 2>/dev/null) || return
