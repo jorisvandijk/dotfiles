@@ -32,6 +32,7 @@
       notify-screen yes
     '';
     urls = [
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2WHjPDvbE6O328n17ZGcfg"; title = "ForrestKnight"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCqVEHtQoXHmUCfJ-9smpTSg"; title = "Answer in progress"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCJaD75W6cXF6KIBYM2Lshrw"; title = "Archifemme"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCVXEi6C_EdjqBUwLn9I804A"; title = "Aroundsquare"; }
@@ -39,12 +40,18 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCHs596idK1P0-wJZQSlk-Uw"; title = "Benita Larsson"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCK5R1BsMtGd4DtI5uGQRHIg"; title = "Best Damn EDC"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCTGHqw41qk_WyK3wJK7nweg"; title = "Brickcrafts"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCNZRaw6JTQLdyW9PNBPGZPw"; title = "Chris' Redhots"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCZNhwA1B5YqiY1nLzmM0ZRg"; title = "Christian Lempa"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCaSCt8s_4nfkRglWCvNSDrg"; title = "Code Aesthetic"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCpZHSdA35z3t1B6alZN1Z6Q"; title = "ContuberniumSPQR"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCdC0An4ZPNr_YiFiYoVbwaw"; title = "Daily Dose Of Internet"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCje6-Yak9u1msy5l7sE9pBA"; title = "Deconstructed"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUQo7nzH1sXVpzL92VesANw"; title = "DIY Perks"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC0hPh-s57PdU215UJglALCw"; title = "Dr Insanity"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCnkXznqC7UlItjWu5nldTJQ"; title = "Ella Aafjes"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCDqjlCe_lt1les5qe-Kd0xQ"; title = "Em's Wild World"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCPD_bxCRGpmmeQcbe2kpPaA"; title = "First We Feast"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2WHjPDvbE6O328n17ZGcfg"; title = "ForrestKnight"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC226u9zaUA5HT-TSiWHmiaQ"; title = "GanshirtArt"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC08v9RkBLemtA4Y68LO9vUw"; title = "HaggisonToast"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCLqQ5m7AXj_oyUvLZPsts0Q"; title = "Hands On Katie"; }
@@ -60,6 +67,7 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC5j4uME6bkiarQsWfRA3hng"; title = "Leighann Creates"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCn7xknPbWDjGQCzBLhtubiA"; title = "LUBACH"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCJ24N4O0bP7LGLBDvye7oCA"; title = "Matt D'Avella"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UChyJSVq_rJuxGi0wAfSTBvg"; title = "Midwest Safety"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCto5zpvpnE6LrbfbHtgPMdA"; title = "Musclebones"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCMrMVIBtqFW6O0-MWq26gqw"; title = "my mechanics"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCbHjx1o7A8eeGqQjPbfsWGA"; title = "Mujin Makes"; }
