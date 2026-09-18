@@ -32,7 +32,6 @@
       notify-screen yes
     '';
     urls = [
-      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2WHjPDvbE6O328n17ZGcfg"; title = "ForrestKnight"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCqVEHtQoXHmUCfJ-9smpTSg"; title = "Answer in progress"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCJaD75W6cXF6KIBYM2Lshrw"; title = "Archifemme"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCVXEi6C_EdjqBUwLn9I804A"; title = "Aroundsquare"; }

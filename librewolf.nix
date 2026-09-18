@@ -114,6 +114,7 @@
               "spring"
               "urlbar-container"
               "spring"
+              "downloads-button"
               "unified-extensions-button"
               "PanelUI-button"
             ];
