@@ -44,9 +44,7 @@
 10.10.10.110 docker.vdijk.be
 10.10.10.119 storage.vdijk.be
 10.10.10.110 home.vdijk.be
-10.10.10.110 cam-door.vdijk.be
-10.10.10.110 cam-balcony.vdijk.be
-10.10.10.110 unifi.vdijk.be
+
 HOSTS
   '';
 
