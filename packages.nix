@@ -54,12 +54,9 @@
   ]);
 
   homebrew = {
-    taps = [
-      "gromgit/fuse"
-    ];
+    taps = [];
 
     brews = [
-      "gromgit/fuse/sshfs-mac"
       "mas"
       "mole"
     ];
@@ -82,7 +79,6 @@
       "hiddenbar"
       "karabiner-elements"
       "lulu"
-      "macfuse"
       "oversight"
       "pearcleaner"
       "privadovpn"

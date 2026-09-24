@@ -44,6 +44,8 @@
 10.10.10.110 docker.vdijk.be
 10.10.10.119 storage.vdijk.be
 10.10.10.110 home.vdijk.be
+192.168.1.5 Proxmox
+10.10.10.119 Docker
 
 HOSTS
   '';
