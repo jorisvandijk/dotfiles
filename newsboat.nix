@@ -58,6 +58,7 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCXgzOrkgJO9lvu9MAFWO39g"; title = "Granny Flat"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC08v9RkBLemtA4Y68LO9vUw"; title = "HaggisonToast"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCLqQ5m7AXj_oyUvLZPsts0Q"; title = "Hands On Katie"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCgdTVe88YVSrOZ9qKumhULQ"; title = "Hardware Haven"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCFQ4mhb74S_BRVY19fAPciw"; title = "Historic Alley"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCii9ezsUa_mBiSdw0PtSOaw"; title = "Hoog"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCczAxLCL79gHXKYaEc9k-ZQ"; title = "IMPERIAL"; }
