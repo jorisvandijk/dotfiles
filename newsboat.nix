@@ -82,7 +82,6 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCtYKe7-XbaDjpUwcU5x0bLg"; title = "neo"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCq8ZAAsI89IoJ-fn1gYpO3g"; title = "Nighshift"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC0intLFzLaudFG-xAvUEO-A"; title = "Not Just Bikes"; }
-      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCyuj5evMBVwyGrqfoKegmBw"; title = "ODS"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCEEYC7-n3iCQSyZBAZOmpEg"; title = "OG Crew"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCAuEjBW8MgKN9DyCvjEPFew"; title = "OttiIie"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCNdpdXEV_Rt94Ff_FWgNrvA"; title = "Perry Daniels"; }
