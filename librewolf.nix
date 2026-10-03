@@ -98,6 +98,9 @@
         "browser.urlbar.suggest.topsites" = false;
         "layout.css.prefers-color-scheme.content-override" = 0;
         "privacy.resistFingerprinting" = false;
+        "privacy.resistFingerprinting.letterboxing" = false;
+        "privacy.fingerprintingProtection" = true;
+        "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
         "privacy.sanitize.sanitizeOnShutdown" = false;
         "sidebar.revamp" = true;
         "sidebar.verticalTabs" = true;

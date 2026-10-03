@@ -32,6 +32,7 @@
     inetutils
     innoextract
     jq
+    lgogdownloader
     mpv
     poppler-utils
     python314
