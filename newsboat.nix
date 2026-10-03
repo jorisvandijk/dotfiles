@@ -51,6 +51,7 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC0hPh-s57PdU215UJglALCw"; title = "Dr Insanity"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCnkXznqC7UlItjWu5nldTJQ"; title = "Ella Aafjes"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCDqjlCe_lt1les5qe-Kd0xQ"; title = "Em's Wild World"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCT3GkiklbsN-G_ZX58vH8nA"; title = "FEATURE."; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCODHrzPMGbNv67e84WDZhQQ"; title = "fern"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCPD_bxCRGpmmeQcbe2kpPaA"; title = "First We Feast"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2WHjPDvbE6O328n17ZGcfg"; title = "ForrestKnight"; }
@@ -71,6 +72,7 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCHqDTfIX-0DGaHlWvv6JZCw"; title = "Lateral with Tom Scott"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCx6yJsJ8qmJu7ja-hTQglRA"; title = "Layer Lab"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC5j4uME6bkiarQsWfRA3hng"; title = "Leighann Creates"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCRZ1OquIwGiUjJS7SXW4Fdg"; title = "Life Of Riza"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCn7xknPbWDjGQCzBLhtubiA"; title = "LUBACH"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCJ24N4O0bP7LGLBDvye7oCA"; title = "Matt D'Avella"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCZcBeMQLxvjhsW3PEYXuiAA"; title = "Memeable Data"; }
@@ -88,7 +90,6 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCmxePybUpZj8RRuWz6r8uTQ"; title = "Politievlogger Jan-Willem"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCAL3JXZSzSm8AlZyD3nQdBA"; title = "Primitive Technology"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCJkfUSH511jawedJ2zq8IIQ"; title = "Problemagic Comedy"; }
-      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC2rzsm1Qi6N1X-wuOg_p0Ng"; title = "Project Farm"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCAbAsEZ-0LccTNbl8r-3EaQ"; title = "Scott Yu-Jan"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC6107grRI4m0o2-emgoDnAA"; title = "Smarter Every Day"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCj1VqrHhDte54oLgPG4xpuQ"; title = "Stuff Made Here"; }
