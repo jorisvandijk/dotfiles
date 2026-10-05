@@ -39,7 +39,7 @@
       "grep" = "grep --color=auto";
       "gs" = "git status";
       "hn" = "jHugoHelper new";
-      "hm" = "jHugoHelper status";
+      "hm" = "jHugoHelper microblog";
       "hs" = "jHugoHelper server";
       "la" = "jList -a";
       "ls" = "jList";

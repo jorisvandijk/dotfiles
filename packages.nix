@@ -67,6 +67,7 @@
       "Amphetamine" = 937984704;
       "Bitwarden" = 1352778147;
       "Command X" = 6448461551;
+      "DaVinci Resolve" = 571213070;
       "WireGuard" = 1451685025;
     };
 
