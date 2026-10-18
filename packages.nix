@@ -26,6 +26,7 @@
     ffmpeg
     git
     git-filter-repo
+    gh
     go
     hugo
     imagemagick
@@ -82,6 +83,7 @@
       "karabiner-elements"
       "lulu"
       "oversight"
+      "pcsx2"
       "pearcleaner"
       "privadovpn"
       "raspberry-pi-imager"
