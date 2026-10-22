@@ -66,6 +66,7 @@
       HOMEBREW_NO_ANALYTICS = "1";
       HOMEBREW_NO_ASK = "1";
       HOMEBREW_NO_ENV_HINTS = "1";
+      _ZO_DOCTOR = "0";
     };
 
     profileExtra = ''
@@ -94,8 +95,6 @@
       PROMPT='
       %F{green}┌──(%f%F{135}%~%F{green})%f$(git_status_prompt)
       %F{green}└─%f%(?,%F{135}λ%f,%F{red}✘%f) '
-
-      eval "$(zoxide init zsh --cmd cd)"
 
       cl() {
         cd "$@" && ls;
@@ -126,5 +125,8 @@
     enableZshIntegration = true;
   };
 
-  programs.zoxide.enable = true;
+  programs.zoxide = {
+    enable = true;
+    options = [ "--cmd" "cd" ];
+  };
 }

@@ -9,6 +9,8 @@
     home-manager.url = "github:nix-community/home-manager/release-26.05";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
     nur.url = "github:nix-community/NUR";
+    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
+    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = inputs@{ self, nix-darwin, nixpkgs, nix-homebrew, home-manager, nur, ... }:

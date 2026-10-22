@@ -53,6 +53,9 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC0hPh-s57PdU215UJglALCw"; title = "Dr Insanity"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCnkXznqC7UlItjWu5nldTJQ"; title = "Ella Aafjes"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCDqjlCe_lt1les5qe-Kd0xQ"; title = "Em's Wild World"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC-qICSxhs-Ch-18B78xbhTQ"; title = "emmy"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCDq5v10l4wkV5-ZBIJJFbzQ"; title = "Ethan Chlebowski"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCUuMYw2l2UeWyTGYixYfRCA"; title = "Evan and Katelyn"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCT3GkiklbsN-G_ZX58vH8nA"; title = "FEATURE."; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCODHrzPMGbNv67e84WDZhQQ"; title = "fern"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCPD_bxCRGpmmeQcbe2kpPaA"; title = "First We Feast"; }
@@ -87,6 +90,7 @@
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCvrLvII5oxSWEMEkszrxXEA"; title = "N-O-D-E"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCJT5qwrkkSp_bSs5NEwcDiA"; title = "Nate Martsolf"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCtYKe7-XbaDjpUwcU5x0bLg"; title = "neo"; }
+      { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCLiAWvpRFtNiVOu6OyEfmDA"; title = "Nicholas Garofola"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCq8ZAAsI89IoJ-fn1gYpO3g"; title = "Nighshift"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UC0intLFzLaudFG-xAvUEO-A"; title = "Not Just Bikes"; }
       { url = "https://www.youtube.com/feeds/videos.xml?channel_id=UCEEYC7-n3iCQSyZBAZOmpEg"; title = "OG Crew"; }

@@ -10,7 +10,7 @@
     ./hammerspoon.nix
     ./karabiner.nix
     ./shell.nix
-    ./zed.nix
+    ./vscodium.nix
   ];
 
   targets.darwin.copyApps.enable = true;

@@ -1,7 +1,10 @@
 { self, inputs, ... }:
 {
   nixpkgs.hostPlatform = "aarch64-darwin";
-  nixpkgs.overlays = [ inputs.nur.overlays.default ];
+  nixpkgs.overlays = [
+    inputs.nur.overlays.default
+    inputs.nix-vscode-extensions.overlays.default
+  ];
   system.stateVersion = 6;
   system.configurationRevision = self.rev or self.dirtyRev or null;
   system.primaryUser = "joris";

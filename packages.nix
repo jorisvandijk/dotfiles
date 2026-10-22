@@ -9,9 +9,8 @@
   #   micro         → micro.nix
   #   newsboat      → newsboat.nix
   #   yazi          → yazi.nix
-  #   zed-editor    → zed.nix
   #   zsh, fzf, zoxide → shell.nix
-  #   hammerspoon, karabiner-elements → homebrew casks, config in hammerspoon.nix / karabiner.nix
+  #   vscodium, hammerspoon, karabiner-elements → homebrew casks, config in vscodium.nix / hammerspoon.nix / karabiner.nix
 
   environment.systemPackages = (with pkgs; [
     _7zz
@@ -35,6 +34,9 @@
     jq
     lgogdownloader
     mpv
+    nixd
+    nixfmt
+    pagefind
     poppler-utils
     python314
     qpdf
@@ -89,6 +91,7 @@
       "raspberry-pi-imager"
       "remanager"
       "steam"
+      "vscodium"
     ];
   };
 }

@@ -38,8 +38,13 @@
                 "! === Kill slowdown toast ==="
                 "www.youtube.com##.paper-toast-open.yt-notification-action-renderer.style-scope.toast-button"
                 ""
+                "! === Kill merch shelf"
+                "www.youtube.com##ytd-merch-shelf-renderer"
+                ""
                 "! === Kill startpage ad nag ==="
                 "www.startpage.com##.css-13k8eon"
+                "eu.startpage.com##.css-q66hc5"
+                "eu.startpage.com##.css-34zzm5"
                 ""
               ];
             };
@@ -63,6 +68,7 @@
       isDefault = true;
       extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
         istilldontcareaboutcookies
+        noscript
         sponsorblock
         ublock-origin
       ];
@@ -125,6 +131,7 @@
               "ublock0_raymondhill_net-browser-action"
               "sponsorblocker_ajay_app-browser-action"
               "idcac-pub_guus_ninja-browser-action"
+              "_73a6fe31-595d-460b-a920-fcc0f8843232_-browser-action"
             ];
             "PersonalToolbar" = [ "personal-bookmarks" ];
             "TabsToolbar" = [];
@@ -135,6 +142,7 @@
             "ublock0_raymondhill_net-browser-action"
             "sponsorblocker_ajay_app-browser-action"
             "idcac-pub_guus_ninja-browser-action"
+            "_73a6fe31-595d-460b-a920-fcc0f8843232_-browser-action"
             "developer-button"
           ];
           dirtyAreaCache = [ "nav-bar" "unified-extensions-area" ];
